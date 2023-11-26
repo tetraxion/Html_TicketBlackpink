@@ -1,0 +1,451 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10vh;
+    padding: 0 3rem;
+    position: fixed;
+    width: 100%;
+    transition: 200ms ease-in-out background-color,
+                200ms ease-in-out box-shadow;
+}
+.logo {
+    color: white;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    transition: 200ms ease-in-out color;
+}
+
+ul a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: .5rem 1.2rem;
+    font-size: 1.1rem;
+    text-shadow: 0 0 .3rem rgba(0, 0, 0, .6);
+    transition: 200ms ease-in-out background-color,
+                200ms ease-in-out color;
+}
+ul a:hover {
+    background-color: royalblue;
+}
+ul{
+    z-index: 2;
+}
+nav ul{
+    display:flex;
+    list-style: none;
+    width: 40%;
+    justify-content:space-between
+}
+.active_nav {
+    background-color: rgb(237, 96, 227);
+    box-shadow: 0 0 .5rem rgb(247, 247, 247);
+    z-index: 2;
+}
+.active_nav  a,
+.active_nav .logo,
+.active_nav .menu-toggle span{
+    color: #0e0e0e;
+}
+.active_nav .menu-toggle span{
+    background-color: #0e0e0e;
+}
+.active_nav ul{
+    background-color: rgb(237, 96, 227);
+}
+.active_nav  a:hover {
+    color: #fff;
+}
+
+/* hamburger */
+.menu-toggle{
+display: none;
+flex-direction: column;
+height: 20px;
+justify-content:space-between;
+position: relative;
+}
+.menu-toggle input{
+    position:absolute;
+    width:40px;
+    height: 28px;
+    left:-5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span{
+    display:block;
+    width: 28px;
+    height:3px;
+    background-color:#fff ;
+    border-radius: 3px;
+    /* transition: all 0.4s; */
+}
+
+/* hamburger animasi */
+.menu-toggle span:nth-child(2){
+    transform-origin:0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin:0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform:rotate(45deg) translate(-1px, -1px)
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    
+    transform:rotate(-45deg) translate(-1px, 0px)
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity:0;
+    transform:scale(0);
+}
+/* responsiv tablet */
+@media screen and (max-width:760px) {
+    nav ul{
+        width:50%;
+    }
+}
+
+/* responsiv tablet */
+@media screen and (max-width:876px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 28%;
+        height: 50vh;
+        align-items: center;
+        justify-content:space-evenly; 
+        flex-direction: column;
+        background-color:transparent ;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1.5s;
+        opacity: 0;
+    }
+
+    nav ul.slidee {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.rii_spanduk img {
+    width: 100%;
+}
+
+
+
+.wrapper img{
+    width: 30%;
+}
+.wrapper {
+    width: 100%;
+}
+.home{
+    display: flex;
+    margin: auto;
+}
+.logo1 img {
+    width: 94%;
+}
+.kolom{
+    width: 60%;
+    padding-top:10%;
+}
+.tbl-pink {
+    background: #fc5185;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 1%;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none
+    
+}
+
+.tbl-pink:hover {
+    background: #1e5aa3;
+    text-decoration: none
+}
+.tengah {
+    text-align: center;
+    width: 100%;
+}
+
+.tutor-list {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.kartu-tutor {
+    width: 20%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 9px 13px 12px 0px rgba(179,175,175,0.75);
+-webkit-box-shadow: 9px 13px 12px 0px rgba(179,175,175,0.75);
+-moz-box-shadow: 9px 13px 12px 0px rgba(179,175,175,0.75);
+
+}
+
+.kartu-tutor img {
+    width: 80%;
+    border-radius: 30px;
+    transition: transform .5s;
+}
+.kartu-tutor img:hover{
+    transform: scale(0.96);
+    transition: 0.5s;
+}
+
+.kartu-tutor p {
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 25px;
+    text-align: center;
+    color: #364f6b;
+}
+
+.partner-list {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kartu-partner {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.kartu-partner img {
+    width: 150px;
+    border-radius: 50%;
+}
+/*  */
+.vidio{
+    padding-top: 5%;
+}
+/* brand */
+.brand {
+    margin: 1.6% auto;
+}
+
+.col-5 {
+    width: 171.5px;
+    border-bottom: .1rem solid #999;
+}
+
+.col-5 img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.col-5 img:hover{
+    background-color:red;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 100px;
+}
+
+/* end brand */
+
+/* footer */
+footer{
+    bottom:0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.781);
+    color: white;
+}
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px 0;
+}
+.box h2{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+}
+.box .content:before{
+ position: absolute;
+ content:'';
+ top: -10px;
+ height:2px;
+ width:100%;
+ background: #1a1a1a;
+}
+.box .content:after{
+    position: absolute;
+    content:'';
+    top: -10px;
+    height:2px;
+    width:15%;
+    background:blueviolet
+   }
+.box .content p{
+    text-align: justify;
+}
+.left .content .social{
+    margin: 20px 0 0 0;
+}
+.left .content .social a{
+    padding:0 20px;
+}
+.left .content .social a span{
+ height: 40px;
+ width: 40px;
+ background: #1a1a1a;
+ line-height: 40px;
+ text-align: center;
+ font-size: 18px;
+ border-radius: 5px;
+ transition: 0.3s;
+}
+.left .content .social a span:hover{
+background:pink
+}
+.center .content .fas{
+    font-size:20px;
+    background:#1a1a1a;
+    height:45px;
+    width:45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.center .content .fas:hover{
+    background:pink
+}
+.center .content .text1{
+    font-size:18px;
+    font-weight: 400;
+    padding-left: 10px;
+}
+.center .content .phone{
+margin-top: 10px;
+}
+.center .content .email{
+    margin-top: 10px;
+    }
+.right form .msg{
+    margin-top: 10px;
+}
+.right form input, .right form textarea{
+    width: 100%;
+    font-size:18px;
+    background: #1515155b;
+    padding-left: 10px;
+    border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+    outline-color:#bf34db;
+}
+.right form input .btn_1{
+    margin-top: 10px;
+}
+.right form .btn_1 button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    background: blueviolet;
+    font-size:20px;
+    font-weight: 500px;
+    cursor: pointer;
+    transition: .03s;
+}
+.right form .btn_1 button:hover{
+    background:#0e0e0e3c
+}
+.bottom center{
+    padding: 5px;
+    font-size: 15px;
+    background: #151515;
+}
+.bottom center span{
+    color: white;
+    
+}
+.bottom center a{
+    color: blueviolet;
+    text-decoration: none;
+}
+.bottom center a:hover{
+text-decoration: underline;
+}
+@media screen and (max-width: 767px){
+    footer{
+        position: relative;
+        bottom: 0px;
+    }
+    .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-content .box{
+        margin: 5px 0;
+    }
+}
+/* html ticket */
+#informasi {
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+.kolom2{
+    width: 60%;
+    padding-top:8%;
+    padding-left: 5%;
+}
+.form1{
+    display: flex;
+}
+a.tbl-biru{
+    background: #fc5185;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none
+}
+.tbl-biru:hover{
+    background:#1e5aa3
+}
